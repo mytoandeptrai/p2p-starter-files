@@ -18,6 +18,11 @@ io.on('connection', (socket) => {
    });
 
    socket.on('callUser', (data) => {
+      console.log(
+         '🚀 ~ file: index.js ~ line 21 ~ socket.on ~ data',
+         data,
+         users
+      );
       io.to(data.userToCall).emit('hey', {
          signal: data.signalData,
          from: data.from,
